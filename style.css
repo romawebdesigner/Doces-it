@@ -1,0 +1,331 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff0e6; /* creme */
+    color: #3e2723; /* chocolate escuro */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #3e2723; /* chocolate escuro */
+    position: relative;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ff69b4; /* pink */
+}
+
+/* Logo*/
+.logo img {
+    max-height: 80px;
+    width: auto;
+    display: block;
+}
+
+/* Header */
+header {
+    background-color: #4b2e1e; /* chocolate */
+    padding: 10px 30px;
+}
+
+/* Container topo */
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .topo {
+        flex-direction: column;
+    }
+
+    .logo img {
+        max-height: 60px;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+/* Menu principal */
+nav ul.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul.menu li a {
+    color: #fff08b; /* amarelo */
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+nav ul.menu li a:hover {
+    color: #ff69b4; /* pink */
+}
+
+/* Submenu_ hover */
+.submenu {
+    position: relative;
+}
+
+.submenu .dropdown {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #3e2723; /* caixa do submenu */
+    list-style: none;
+    padding: 10px 0;
+    display: none;
+    min-width: 160px;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+/* Mostrar submenu ao passar o mouse */
+.submenu:hover .dropdown {
+    display: block;
+}
+
+/* Links do submenu */
+.dropdown li a {
+    color: #3e2723; /* chocolate escuro */
+    padding: 8px 15px;
+    display: block;
+    transition: color 0.3s;
+}
+
+/* Hover do submenu */
+.dropdown li a:hover {
+    color: #ff69b4; /* pink */
+}
+
+/* Instagram */
+header .social a {
+    color: #ff69b4;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+
+header .social a:hover {
+    color: #fff08b;
+}
+
+
+/* Banner */
+.carousel {
+    width: 100%;
+    height: 450px;              /* altura padrão desktop */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container dos slides */
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Slide */
+.slide {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* IMAGEM AJUSTÁVEL AO SITE */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* ajusta sem distorcer */
+    object-position: center;    /* centraliza a imagem */
+}
+
+/* Carrocel resposnivo*/
+@media (max-width: 1024px) {
+    .carousel {
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        height: 230px;
+    }
+}
+
+
+
+
+
+/* Setas */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(62, 39, 35, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 50%;
+    color: #fff08b;
+    transition: background 0.3s;
+    z-index: 10;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(62, 39, 35, 0.9);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Bolinhas indicadores */
+.indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicators .dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 235, 205, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicators .dot.active {
+    background: #3e2723;
+}
+
+
+
+
+/* Seção de Destaques */
+.destaques {
+    background: #fff8f0; /* creme suave */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.destaques .container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.destaques .bloco {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destaques .bloco:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.destaques .bloco img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destaques .bloco h3 {
+    color: #3e2723; /* chocolate escuro */
+    margin-bottom: 10px;
+}
+
+.destaques .bloco p {
+    color: #5d4037; /* tom de marrom mais suave */
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+/* Rodapé */
+footer {
+    background: #3e2723;
+    color: #fff08b;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .footer-social a {
+    color: #ff69b4;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+footer .footer-social a:hover {
+    color: #fff08b;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    nav ul.menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .slide img {
+        height: 300px;
+    }
+}

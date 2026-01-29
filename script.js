@@ -1,4 +1,4 @@
-// Carousel
+// Carossel
 const slides = document.querySelectorAll('.slide');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
@@ -39,6 +39,7 @@ let slideInterval = setInterval(nextSlide, 5000);
 const carousel = document.querySelector('.carousel');
 carousel.addEventListener('mouseover', () => clearInterval(slideInterval));
 carousel.addEventListener('mouseout', () => slideInterval = setInterval(nextSlide, 5000));
+
 
 
 
